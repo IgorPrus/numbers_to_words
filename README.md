@@ -5,13 +5,13 @@
 # Использывание: 
 
 from numbers_to_words import num2words
-print(num2words(42.42, lang='by', to ='currency', currency = "RUB"))
+>>>print(num2words(42.42, lang='by', to ='currency', currency = "RUB"))
 сорак два рубля, сорак дзве капейкі
 
-print(num2words(42.42, lang='by', to ='currency', currency = "EUR"))
+>>>print(num2words(42.42, lang='by', to ='currency', currency = "EUR"))
 сорак два еўра, сорак два цэнта
 
-print(num2words(42.42, lang='by', to ='currency', currency = "USD"))
+>>>print(num2words(42.42, lang='by', to ='currency', currency = "USD"))
 сорак два даляра, сорак два цэнта
 
 to: Конвертер для использования. Поддерживаемые значения:
