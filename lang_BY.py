@@ -8,6 +8,7 @@ from .utils import get_digits, splitbyx
 
 ZERO = ('нуль',)
 
+
 ONES_FEMININE = {
     1: ('адна',),
     2: ('дзве',),
