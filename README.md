@@ -14,10 +14,12 @@ from numbers_to_words import num2words
 >>>print(num2words(42.42, lang='by', to ='currency', currency = "USD"))
 сорак два даляра, сорак два цэнта
 
-to: Конвертер для использования. Поддерживаемые значения:
+to: Конвертер для использования. Поддерживаемые значения, to='значение'
 
 cardinal (default)
 ordinal 
 ordinal_num
 year
 currency
+
+Конвертер для валюты currency = "Значение"
