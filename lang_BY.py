@@ -106,7 +106,7 @@ class Num2Word_BY(Num2Word_Base):
                      "пяць": "пяты",
                      "шэсць": "шосты",
                      "сем": "сёмы",
-                     "восем": "восьмай",
+                     "восем": "восьмы",
                      "дзевяць": "дзявяты",
                      "сто": "соты"}
         self.ords_feminine = {"адзін": "",
@@ -163,23 +163,25 @@ class Num2Word_BY(Num2Word_Base):
             if lastword[:-3] in self.ords_feminine:
                 lastword = self.ords_feminine.get(
                     lastword[:-3], lastword) + "соты"
-            elif lastword[-1] == "ь" or lastword[-2] == "т":
-                lastword = lastword[:-1] + "ый"
             elif lastword[-1] == "к":
                 lastword = lastword.replace('орак', 'аракавы') #+ "овой"
             elif lastword[-7:] == "мдзесят":
                 lastword = lastword.replace('емдзесят', 'ямідзесяты')
             elif lastword[-6:] == "дзесят":
-                lastword = lastword.replace('ь', 'и') + 'ый'
+                lastword = lastword.replace('ь', 'i') + 'ы'
+            elif lastword[-4:] == "цаць":
+                lastword = lastword.replace('ць','ты')
+            elif lastword[-1:] == "м":
+                lastword = lastword +'ы'
             elif lastword[-2] == "ч" or lastword[-1] == "ч":
                 if lastword[-2] == "ч":
-                    lastword = lastword[:-1] + "ный"
+                    lastword = lastword[:-1] + "ны"
                 if lastword[-1] == "ч":
-                    lastword = lastword + "ный"
+                    lastword = lastword + "ны"
             elif lastword[-1] == "н" or lastword[-2] == "н":
-                lastword = lastword[:lastword.rfind('н') + 1] + "ный"
+                lastword = lastword[:lastword.rfind('н') + 1] + "ны"
             elif lastword[-1] == "д" or lastword[-2] == "д":
-                lastword = lastword[:lastword.rfind('д') + 1] + "ный"
+                lastword = lastword[:lastword.rfind('д') + 1] + "ны"					
         outwords[-1] = self.title(lastword)
         return " ".join(outwords).strip()
 
